@@ -1,0 +1,469 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+/* ROOT VARIABLES */
+:root {
+  --color-primary: #7380ec;
+  --color-danger: #ff7782;
+  --color-success: #41f1b6;
+  --color-warning: #ffbb55;
+  --color-white: #fff;
+  --color-info-dark: #7d8da1;
+  --color-info-light: #dce1eb;
+  --color-dark: #363949;
+  --color-light: rgba(132, 139, 200, 0.18);
+  --color-primary-variant: #111e88;
+  --color-dark-variant: #677483;
+  --color-background: #f6f6f9;
+
+  --card-border-radius: 2rem;
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 0.8rem;
+  --border-radius-3: 1.2rem;
+
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+/* DARK THEME VARIABLES */
+.dark-theme-variables {
+  --color-background: #181a1e;
+  --color-white: #202528;
+  --color-dark: #edeffd;
+  --color-dark-variant: #1e262b;
+  --color-light: rgba(0, 0, 0, 0.4);
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+/* STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  appearance: none;
+  border: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: poppins, sans-serif;
+}
+html {
+  font-size: 14px;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: poppins, sans-serif;
+  font-size: 0.88rem;
+  background: url(../sky.jpg);
+  background-size: cover;
+  user-select: none;
+  overflow-x: hidden;
+}
+.container {
+  display: grid;
+  width: 100%;
+  margin: 20px auto;
+  grid-template-columns: 8ch auto;
+}
+
+a {
+  color: var(--color-dark);
+}
+img {
+  display: block;
+  width: 100%;
+}
+li{
+  font-weight: 100;
+  font-size: 1.2rem;
+}
+small {
+  font-size: 0.75rem;
+}
+h5 {
+  text-align: center;
+}
+.profile-photo {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.text-muted {
+  color: var(--color-info-dark);
+}
+p {
+  color: var(--color-dark-variant);
+  font-size: 1rem;
+  font-weight: 50px;
+}
+b {
+  color: var(--color-dark);
+}
+.primary {
+  color: var(--color-primary);
+}
+.danger {
+  color: var(--color-danger);
+}
+.success {
+  color: var(--color-success);
+}
+.warning {
+  color: var(--color-warning);
+}
+/* End of STYLES */
+/*body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: radial-gradient(#a1dae1, rgb(0, 162, 255));
+  font-family: Lato, sans-serif;
+}
+a {
+	text-decoration: none;
+}
+li {
+	list-style: none;
+}*/
+
+/*Section header Navbar*/
+header{
+  position: relative;
+  top: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+label{
+  display: none;
+}
+
+header .logo{
+  position: relative;
+  color: #000;
+  font-size: 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+header .navigation a{
+  color: #0F2043;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 2px 15px;
+  border-radius: 20px;
+  transition: 0.3s;
+  transition-property: background;
+}
+
+header .navigation a:not(:last-child){
+  margin-right: 30px;
+}
+
+header .navigation a:hover{
+  background: #fff;
+}
+
+#check{
+  z-index: 3;
+  display: none;
+}
+/*End of Section header Navbar*/
+
+/*Section BSKIlls*/
+.b-skills
+{
+	padding-top: 46px;
+	text-align: center;
+}
+
+.b-skills:last-child { margin-bottom: -30px; }
+
+.b-skills h2 
+{ 
+  margin-top: 20px; 
+  font-weight: 700; 
+  color: #E8AF30;
+  text-shadow: #3361AC 1px 0 10px;
+}
+  
+.b-skills h1 
+{
+  margin: auto;
+  font-family:Verdana, Geneva, Tahoma, sans-serif; 
+  font-weight: bold; 
+  color: #162F65}
+.b-skills p {margin-bottom: 50px; font-weight: 500; color:#181a1e;}
+.skill-item
+{
+	position: relative;
+	max-width: 250px;
+	width: 100%;
+	margin-bottom: 30px;
+	color: #555;
+}
+
+.chart-container
+{
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-top: 100%;
+	margin-bottom: 27px;
+}
+
+.skill-item .chart,
+.skill-item .chart canvas
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+.skill-item .chart:before
+{
+	content: "";
+	width: 0;
+	height: 100%;
+}
+
+.skill-item .chart:before,
+.skill-item .percent
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.skill-item .percent
+{
+	position: relative;
+	line-height: 1;
+	font-size: 40px;
+	font-weight: 900;
+	z-index: 2;
+}
+
+.skill-item  .percent:after
+{
+	content: attr(data-after);
+	font-size: 20px;
+}
+
+/*.skill-item insights*/
+/*Deleted the: .skill-item .insights*/
+
+.skill-item .insights > div {
+  background: linear-gradient(#bdc2e8, #e6dee9);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  margin-top: 1rem;
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+}
+.skill-item .insights > div:hover {
+  /*cursor: pointer;*/
+  box-shadow: none;
+}
+.skill-item .insights > div span {
+  background: blue;
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: var(--color-white);
+  font-size: 2rem;
+}
+
+.skill-item .insights > div .middle {
+  align-items: center;
+  justify-content: space-between;
+}
+.skill-item .insights .pm25 h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+
+}
+.skill-item .insights .pm25 h2 {
+  font-size: 1.15rem;
+  font-weight: lighter;
+  font-style: oblique;
+  color: #235789;
+} 
+.skill-item .insights .pm25 h3{
+  font-size: 1rem;
+  font-weight: light;
+  font-style: italic;
+} 
+
+.skill-item .insights small {
+  margin-top: 1.6rem;
+  display: block;
+}
+/*END .skill-item insights*/
+
+
+
+/* START INSIGHTS */
+/* END INSIGHTS */
+
+/*DISPLAY DATE*/
+
+
+.display-date {
+  display: flex;
+  gap: 20px 10px;
+  align-items: center;
+  position: absolute;
+  justify-self: center;
+  margin-top:auto; 
+  
+  margin-bottom:auto; 
+  border: 1px solid #b9b8b8; 
+  background-color: #E7E6DD;
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+.display-time {
+  justify-self: center;
+  position: relative;
+  font-size: 1.5rem;
+  /*font-weight: bold;*/
+  /*border: 2px solid #c4e0e5;*/
+  padding: 10px 20px;
+  border-radius: 1px;
+  transition: ease-in-out 0.1s;
+  transition-property: background, box-shadow, color;
+  -webkit-box-reflect: below 2px
+    linear-gradient(transparent, rgba(255, 255, 255, 0.05));
+}
+
+/*.display-time:hover {
+  background: #ffd868;
+  box-shadow: 0 0 30px#ffd868;
+  color: #272727;
+  cursor: pointer;
+}*/
+
+/*END OF DISPLAY DATE*/
+
+/*AQI Gauge*/
+.gauge {
+  display: inline-block;
+}
+
+.gauge > div[role=meter] {
+  border-radius: 8rem 8rem 0 0;
+  border: 1px solid black;
+  width: 16rem;
+  height: 8rem;
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+  background: conic-gradient(from 0deg at 50% 100%,
+                              red 30deg, #8f3f97 30deg 60deg,
+                              #7e0023 60deg 91deg, transparent 91deg 269deg,
+                              #00e400 269deg 300deg, #ffff00 300deg 330deg,
+                              #ff7e00 330deg 360deg);
+}
+
+.gauge > label {
+  font-size: 14px;
+  text-align: center;
+  background-color: black;
+  padding: .2rem 0;
+  display: block;
+}
+
+.dial {
+  background-color: #00ff00;
+  transition: background-color 1s, color .25s;
+  border-radius: 10rem 10rem 0 0;
+  width: 70%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  z-index: 2;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 1rem #000;
+  border-bottom: none;
+  box-sizing: border-box;
+  color: #000;
+}
+
+.dial.white {
+  color: #fff;
+}
+
+.dial > span {
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.dial > .arrow {
+  position: absolute;
+  left: calc(50% - .25rem);
+  bottom: 0;
+  width: .5rem;
+  height: calc(100% + 1px);
+  background-color: transparent;
+  transform-origin: bottom center;
+  transform: rotate(-90deg);
+  transition: transform 1s;
+}
+
+.dial > .arrow:after {
+  content: "";
+  border-left: .5rem solid transparent;
+  border-right: .5rem solid transparent;
+  border-top: .5rem solid #000;
+  position: absolute;
+  left: calc(50% - .5rem);
+  top: 0;
+  width: 0;
+  height: 0;
+  transition: border-color .25s;
+}
+
+.dial.white > .arrow:after {
+  border-top-color: #fff;
+}
+
+.aqi-num {
+  font-weight: bold;
+  font-size: 120%;
+  margin-top: 1.25rem;
+}
+
+@media (forced-colors: active) {
+  .dial {
+    border: 2px solid black;
+    border-bottom: none;
+  }
+  
+  .gauge > div[role=meter] {
+    border-width: 2px;
+    border-bottom: none;
+  }
+  
+  .gauge > label {
+    border: 2px solid black;
+  }
+}
+/*END OF aqi gauge*/
+
